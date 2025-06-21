@@ -1,12 +1,16 @@
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 from collections import Counter
-from datetime import datetime
+from datetime import datetime, timedelta
+import os
+
+from dotenv import load_dotenv
+load_dotenv()
 
 # USER CLIENT: to get songs they are listening to and stuff
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
-    client_id="b03e39464f6549d0a8b182994115dc73",
-    client_secret="bb2e540b1e1d418d8a0007ac92685422",
+    client_id=os.getenv("SPOTIFY_CLIENT_ID"),
+    client_secret=os.getenv("SPOTIFY_CLIENT_SECRET"),
     redirect_uri="http://127.0.0.1:8888/callback",
     scope="user-read-recently-played"
 ))
@@ -20,7 +24,7 @@ def getGenres(sp, date):
         played_at = item['played_at']
         played_at = played_at[:10]
 
-        if played_at != date:
+        if played_at != date.strftime("%Y-%m-%d"):
             continue
 
         artist_id = item['track']['artists'][0]['id']
@@ -34,3 +38,4 @@ def getGenres(sp, date):
     return dict(genre_counter)
 
 
+print(getGenres(sp, datetime.now().date()))
