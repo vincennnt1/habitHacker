@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import re
+import joblib
 
 # Loading & Cleaning Data
 data = pd.read_csv("data.csv")
@@ -50,10 +51,13 @@ def clean_tweet(text):
 
 data["content"] = data["content"].apply(clean_tweet)
 
+# LABEL ENCODER
 from sklearn.preprocessing import LabelEncoder
 
 le = LabelEncoder()
 data["label"] = le.fit_transform(data["sentiment"])
+
+joblib.dump(le, "label_encoder.job")
 
 # print(data['sentiment'].unique())
 # print(data.info())
@@ -109,8 +113,8 @@ y_pred = best_model.predict(X_test)
 # INFO ON MODEL
 print(classification_report(y_test, y_pred, target_names=le.classes_))    
 print(grid.best_params_)
+print(le.classes_)
 
-import joblib
 
 # Serializing Models
 joblib.dump(best_model, "model.job")
