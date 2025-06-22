@@ -141,3 +141,14 @@ def remove(num):
 
 # test for remove
 #remove(4)
+
+def get_recent_entries(n=10):
+    try:
+        with open("user_info.csv", "r", encoding="utf-8") as f:
+            reader = list(csv.reader(f))
+            headers = reader[0]
+            rows = reader[1:]
+            last_n = rows[-n:] if len(rows) >= n else rows
+            return [headers] + last_n  # Add headers to top
+    except Exception as e:
+        return [["Error", str(e)]]
