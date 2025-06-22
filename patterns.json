@@ -1,0 +1,73 @@
+{
+    "ENTRIES_NUM": 10,
+    "anger": {
+        "weather": {
+            "Sunny": 0,
+            "Cloudy": 0,
+            "Foggy": 0,
+            "Snowy": 0,
+            "Rainy": 1,
+            "Stormy": 0
+        },
+        "genres": {
+            "trap": 1
+        }
+    },
+    "happiness": {
+        "weather": {
+            "Sunny": 2,
+            "Cloudy": 0,
+            "Foggy": 0,
+            "Snowy": 0,
+            "Rainy": 0,
+            "Stormy": 0
+        },
+        "genres": {
+            "rock": 1,
+            "pop": 1
+        }
+    },
+    "love": {
+        "weather": {
+            "Sunny": 1,
+            "Cloudy": 1,
+            "Foggy": 0,
+            "Snowy": 0,
+            "Rainy": 0,
+            "Stormy": 0
+        },
+        "genres": {
+            "r&b": 1,
+            "classical": 1
+        }
+    },
+    "sadness": {
+        "weather": {
+            "Sunny": 0,
+            "Cloudy": 1,
+            "Foggy": 0,
+            "Snowy": 0,
+            "Rainy": 2,
+            "Stormy": 0
+        },
+        "genres": {
+            "indie pop": 1,
+            "hip hop": 1,
+            "uk drill": 1
+        }
+    },
+    "worry": {
+        "weather": {
+            "Sunny": 0,
+            "Cloudy": 0,
+            "Foggy": 1,
+            "Snowy": 0,
+            "Rainy": 1,
+            "Stormy": 0
+        },
+        "genres": {
+            "alternative": 1,
+            "lofi": 1
+        }
+    }
+}
