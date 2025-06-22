@@ -1,5 +1,5 @@
 {
-    "ENTRIES_NUM": 10,
+    "ENTRIES_NUM": 11,
     "anger": {
         "weather": {
             "Sunny": 0,
@@ -63,11 +63,12 @@
             "Foggy": 1,
             "Snowy": 0,
             "Rainy": 1,
-            "Stormy": 0
+            "Stormy": 1
         },
         "genres": {
             "alternative": 1,
-            "lofi": 1
+            "lofi": 1,
+            "hip hop": 1
         }
     }
 }

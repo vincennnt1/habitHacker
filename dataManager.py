@@ -43,9 +43,9 @@ def update(row):
         patterns = json.load(f)
 
     # Normalize inputs
-    sentiment = row[6].lower()
-    weather = row[3].title()
-    genre = row[4].lower()
+    sentiment = row[7].lower()
+    weather = row[4].title()
+    genre = row[5].lower()
 
     patterns[sentiment]["weather"][weather] += 1
 
@@ -59,7 +59,7 @@ def update(row):
 
 
 # submit's an entry to user_info.csv
-def submit(entry):
+def submit(entry, title):
     with open("location.json", "r") as f:
         loc = json.load(f)
         weather_data = get_weather(loc)
@@ -89,6 +89,7 @@ def submit(entry):
         weather = "Stormy"
 
     row = [ entries,
+            title,
             datetime.now().strftime('%Y-%m-%d'), 
             weather_map.get(code),
             weather,
@@ -117,9 +118,9 @@ def remove(num):
 
     for row in rows[1:]:
         if row[0] == str(num):
-            sentiment = row[6].lower()
-            weather = row[3].title()
-            genre = row[4].lower()
+            sentiment = row[7].lower()
+            weather = row[4].title()
+            genre = row[5].lower()
             with open("user.json", "r", encoding="utf-8") as f:
                 patterns = json.load(f)
                 
@@ -139,4 +140,4 @@ def remove(num):
         writer.writerows(new_rows)
 
 # test for remove
-remove(4)
+#remove(4)
