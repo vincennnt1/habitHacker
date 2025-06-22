@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import re
+import joblib
 
 # Loading & Cleaning Data
 data = pd.read_csv("data.csv")
@@ -54,6 +55,9 @@ from sklearn.preprocessing import LabelEncoder
 
 le = LabelEncoder()
 data["label"] = le.fit_transform(data["sentiment"])
+
+joblib.dump(le, "label_encoder.job")
+
 
 # print(data['sentiment'].unique())
 # print(data.info())
@@ -110,7 +114,6 @@ y_pred = best_model.predict(X_test)
 print(classification_report(y_test, y_pred, target_names=le.classes_))    
 print(grid.best_params_)
 
-import joblib
 
-# Serializing Models
+# Serializing Model
 joblib.dump(best_model, "model.job")

@@ -1,1 +1,11 @@
-id, date, weather, leading_genres, entry, sentiment
+date, weather, weather_class, leading_genres, entry, sentiment
+"2025-06-21","Light drizzle","Rainy","rap","I am feeling quite horrible today.","sadness"
+"2025-06-20","Clear sky","Sunny","rock","Life feels full of joy and energy today!","happiness"
+"2025-06-19","Overcast","Cloudy","r&b","I’ve been thinking a lot lately, feeling kind of reflective.","love"
+"2025-06-18","Partly cloudy","Cloudy","indie pop","I miss how things used to be.","sadness"
+"2025-06-17","Rain showers","Rainy","alternative","Feeling nervous about tomorrow.","worry"
+"2025-06-16","Partly cloudy","Sunny","pop","Had such a fun day at the beach!","happiness"
+"2025-06-15","Heavy rain","Rainy","hip hop","Nothing makes sense anymore.","sadness"
+"2025-06-14","Fog","Foggy","lofi","I’m anxious about next week’s test.","worry"
+"2025-06-13","Clear sky","Sunny","classical","Just enjoyed a peaceful evening walk.","love"
+"2025-06-12","Rain showers","Rainy","trap","It’s been a stressful day.","anger"

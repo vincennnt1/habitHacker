@@ -16,7 +16,7 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
 ))
 
 # Get recent tracks, we'll use 50
-def getGenres(sp, date):    
+def getGenres(date):    
     results = sp.current_user_recently_played(limit=50)
     genre_counter = Counter()
 
@@ -35,7 +35,7 @@ def getGenres(sp, date):
             genre_counter.update(genres)
         except:
             pass
-    return dict(genre_counter)
+    return genre_counter.most_common(1)[0][0]
 
 
 # print(getGenres(sp, datetime.now().date()))
@@ -88,8 +88,8 @@ weather_map = {
     99: "Thunderstorm with heavy hail"
 }
 
-loc = get_location()
-if loc:
+
+def get_weather(loc):
     url = f"https://api.open-meteo.com/v1/forecast"
     params = {
     "latitude": loc['latitude'],
@@ -101,4 +101,4 @@ if loc:
     }
     response = requests.get(url, params=params)
     data = response.json()
-    print(data)
+    return data
