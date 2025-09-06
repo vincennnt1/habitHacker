@@ -21,6 +21,7 @@ habitHacker is a personal habit and mood tracking tool that leverages a custom-t
 - **Natural Language Processing** (custom NLP model)  
 - **Data analysis libraries** (e.g., pandas, numpy, scikit-learn)
 - **Kivy** (GUI for Windows)
+- **Joblib** (for saving NLP models)
 
 ## Future Plans
 
